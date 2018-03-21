@@ -1,0 +1,686 @@
+/* Importing Roboto Google Font */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+/*
+ * Styling that affects the whole document
+ */
+
+* { box-sizing: border-box; }
+
+/* Background of the whole webpage */
+body { background-image: url(assets/img/playstation-pattern.png); }
+
+/* Font style and color*/
+p {
+  font-family: 'Roboto', sans-serif;
+  color: #848484;
+}
+
+button {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Making text in the I/O button not selectable to improve user experience. */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/*
+ * Panel and Button Colors
+ */
+
+.panel {
+  background-color: #95989a;
+  border-radius: 55px;
+  margin: auto;
+  position: relative;
+}
+
+  .panel .buttons {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+
+    .panel .buttons [class*="diode-"] {
+      display: inline-block;
+      border: none;
+      float: left;
+      padding: 0;
+      position: relative;
+    }
+
+    .panel .buttons .diode-green {
+      background: green;
+      background: linear-gradient(45deg,#7aa34e,#344a1b,#557a2c);
+    }
+
+      .panel .buttons .diode-green.active {
+        /*** background: linear-gradient(-150deg,#96e046,#7fC336,#437608); ***/
+        background: #7ef500;
+      }
+
+    .panel .buttons .diode-red {
+      background: red;
+      background: linear-gradient(-150deg,#ef6680,#b2112e,#8b0119);
+    }
+
+      .panel .buttons .diode-red.active {
+        /*** background: linear-gradient(315deg,#fb8299,#ef2549,#ff0031); ***/
+        background: #ff0031;
+      }
+
+    .panel .buttons .diode-yellow {
+      background-color: yellow;
+      background: linear-gradient(150deg,#ffe47e,#ddb418,#b59000);
+    }
+
+    .panel .buttons .diode-blue {
+      background: blue;
+      background: linear-gradient(45deg,#5b9ad8,#204c77,#013a71);
+    }
+
+      .panel .buttons .diode-blue.active {
+        /*** background: linear-gradient(45deg,#6eb5ff,#2e7cc7,#1265b5); ***/
+        background: #0080ff;
+      }
+
+      .panel .buttons .diode-yellow.active {
+        /*** background: linear-gradient(135deg,#fcff37,#d9dc11,#b9a602); ***/
+        background: #ffe200;
+      }
+
+    .panel .buttons .over {
+      background: #c61b1b;
+    }
+
+p.logo {
+  text-align: center;
+  position: relative;
+  font-size: 40px;
+  margin: 0;
+  margin-top: 40px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* Sub-panel */
+.sub-panel {
+  background: #e2e2e2;
+  background: linear-gradient(180deg,#fcfcfc,#e2e2e2,#b9b9b9);
+  border: 3px solid #95989a;
+  border-radius: 55px;
+  margin: auto;
+  position: relative;
+  width: 275px;
+  z-index: 20;
+}
+
+  .sub-panel .row {
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+    z-index: 40;
+  }
+
+    .sub-panel .row .inline {
+      display: inline-block;
+      margin: auto 10px;
+    }
+
+      .sub-panel .row .inline .startButton {
+        background: rgba(2,128,144,.6);
+        border: 1px solid #95989a;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px rgba(0,0,0,.3);
+        height: 30px;
+        width: 30px;
+      }
+
+        .sub-panel .row .inline .startButton:active {
+          background: rgba(2,128,144,1);
+          box-shadow: 1px 1px 3px rgba(0,0,0,.7);
+          transform: translateY(2px);
+        }
+
+      .sub-panel .row .inline .lvlBox {
+        background: #fcfcfc;
+        border: 1px solid #95989a;
+        font-weight: 600;
+        height: 30px;
+        width: 30px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+  .sub-panel .powerButton {
+    background: #95989a;
+    border-radius: 25px;
+    box-shadow: 0 0 0 1px #95989a inset;
+    width: 65px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    position: relative;
+    transition: text-align 2s;
+    z-index: 40;
+  }
+
+    .sub-panel .powerButton.active {
+        text-align: right;
+        background: #028090;
+      }
+
+    .sub-panel .powerButton p.powerText {
+      color: white;
+      position: absolute;
+      top: -10px;
+      left: 30px;
+    }
+
+    .sub-panel .powerButton p.powerText.active {
+      left: 10px;
+    }
+
+    .sub-panel .powerButton button.powerSwitch {
+      background: #fcfcfc;
+      border: 1px solid #95989a;
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+      align-items: flex-end;
+    }
+
+/*
+ * Main Panel
+ */
+
+.main {
+  height: 275px;
+  width: 275px;
+  margin-top: 10px;
+  z-index: 10;
+}
+
+  .main .big {
+    height: 275px;
+    width: 275px;
+  }
+
+    .main .big [class*="diode-"] {
+      height: 137.5px;
+      width: 137.5px;
+    }
+
+    .main .big .diode-green {
+      border-left: 3px solid #95989a;
+      border-top: 3px solid #95989a;
+      border-top-left-radius: 55px;
+    }
+
+    .main .big .diode-red {
+      border-right: 3px solid #95989a;
+      border-top: 3px solid #95989a;
+      border-top-right-radius: 55px;
+    }
+
+    .main .big .diode-blue {
+      border-right: 3px solid #95989a;
+      border-bottom: 3px solid #95989a;
+      border-bottom-right-radius: 55px;
+    }
+
+    .main .big .diode-yellow {
+      border-left: 3px solid #95989a;
+      border-bottom: 3px solid #95989a;
+      border-bottom-left-radius: 55px;
+    }
+
+/* Sounds Controls */
+.volume-control {
+  margin-top: 7px;
+  height: 25px;
+  width: 275px;
+}
+
+  .volume-control .small {
+    height: 25px;
+    width: 275px;
+  }
+
+    .volume-control .small [class*="diode-"] {
+      height: 25px;
+      width: 68.75px;
+    }
+
+    .volume-control .small .diode-green {
+      border-left: 1px solid #95989a;
+      border-bottom: 1px solid #95989a;
+      border-top: 1px solid #95989a;
+      border-top-left-radius: 55px;
+      border-bottom-left-radius: 55px;
+    }
+
+    .volume-control .small .diode-red {
+      border-top: 1px solid #95989a;
+      border-bottom: 1px solid #95989a;
+    }
+
+    .volume-control .small .diode-yellow {
+      border-bottom: 1px solid #95989a;
+      border-top: 1px solid #95989a;
+    }
+
+    .volume-control .small .diode-blue {
+      border-right: 1px solid #95989a;
+      border-top: 1px solid #95989a;
+      border-bottom: 1px solid #95989a;
+      border-top-right-radius: 55px;
+      border-bottom-right-radius: 55px;
+    }
+
+      .volume-control .row img {
+        position: absolute;
+        margin: auto;
+        height: 20px;
+        width: 20px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+/* Phones wider than 350px */
+@media only screen and (min-width: 350px) {
+p.logo {
+  font-size: 60px;
+  margin: 0;
+  margin-top: 40px;
+}
+
+.sub-panel {
+  width: 325px;
+}
+
+  .sub-panel .row {
+    margin-top: 15px;
+  }
+
+.main {
+  height: 325px;
+  width: 325px;
+  margin-top: 15px;
+}
+
+  .main .big {
+    height: 325px;
+    width: 325px;
+  }
+
+    .main .big [class*="diode-"] {
+      height: 162.5px;
+      width: 162.5px;
+    }
+
+.volume-control {
+  margin-top: 15px;
+  height: 40px;
+  width: 325px;
+}
+
+  .volume-control .small {
+    height: 40px;
+    width: 325px;
+  }
+
+    .volume-control .small [class*="diode-"] {
+      height: 40px;
+      width: 81.25px;
+    }
+
+    .volume-control .row img {
+      height: 25px;
+      width: 25px;
+    }
+}
+
+/* Phones wider than 400px */
+@media only screen and (min-width: 400px) {
+p.logo {
+  font-size: 70px;
+  margin: 0;
+  margin-top: 40px;
+}
+
+.sub-panel {
+  width: 375px;
+}
+
+.main {
+  height: 375px;
+  width: 375px;
+  margin-top: 15px;
+}
+
+  .main .big {
+    height: 375px;
+    width: 375px;
+  }
+
+    .main .big [class*="diode-"] {
+      height: 187.5px;
+      width: 187.5px;
+    }
+
+.volume-control {
+  margin-top: 15px;
+  height: 40px;
+  width: 375px;
+}
+
+  .volume-control .small {
+    height: 40px;
+    width: 375px;
+  }
+
+    .volume-control .small [class*="diode-"] {
+      height: 40px;
+      width: 93.75px;
+    }
+}
+
+/* tablets */
+@media only screen and (min-width: 600px) {
+/*
+ * Base panel and big buttons
+ */
+
+.panel {
+  border-radius: 100%;
+  position: absolute;
+}
+
+  .panel .buttons .diode-green {
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 0;
+  }
+
+  .panel .buttons .diode-red {
+    border-top-right-radius: 100%;
+  }
+
+  .panel .buttons .diode-yellow {
+    border-bottom-left-radius: 100%;
+  }
+
+  .panel .buttons .diode-blue {
+    border-bottom-right-radius: 100%;
+    border-top-right-radius: 0;
+  }
+
+p.logo {
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 250px;
+  height: 175px;
+}
+
+.main {
+  height: 520px;
+  width: 520px;
+  margin-top: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+  .main .big {
+    height: 500px;
+    width: 500px;
+  }
+
+    .main .big [class*="diode-"] {
+      height: 250px;
+      width: 250px;
+    }
+
+    .main .big .diode-green {
+      border-right: 3px solid #95989a;
+      border-bottom: 3px solid #95989a;
+    }
+
+    .main .big .diode-red {
+      border-left: 3px solid #95989a;
+      border-bottom: 3px solid #95989a;
+    }
+
+    .main .big .diode-yellow {
+      border-right: 3px solid #95989a;
+      border-top: 3px solid #95989a;
+    }
+
+    .main .big .diode-blue {
+      border-left: 3px solid #95989a;
+      border-top: 3px solid #95989a;
+    }
+
+/* Sub-panel */
+.sub-panel {
+  border: 5px solid #95989a;
+  border-radius: 100%;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 250px;
+}
+
+  .sub-panel .row {
+    margin-top: 110px;
+  }
+
+/* Sounds Controls */
+.volume-control {
+  height: 108px;
+  right: 10px;
+  width: 108px;
+}
+
+  .volume-control .small {
+    height: 100px;
+    width: 100px;
+  }
+
+    .volume-control .small [class*="diode-"] {
+      height: 50px;
+      width: 50px;
+    }
+
+    .volume-control .small .diode-green {
+      border-right: 1px solid #95989a;
+      border-bottom: 1px solid #95989a;
+    }
+
+    .volume-control .small .diode-red {
+      border-left: 1px solid #95989a;
+      border-bottom: 1px solid #95989a;
+    }
+
+    .volume-control .small .diode-yellow {
+      border-right: 1px solid #95989a;
+      border-top: 1px solid #95989a;
+    }
+
+    .volume-control .small .diode-blue {
+      border-left: 1px solid #95989a;
+      border-top: 1px solid #95989a;
+    }
+
+      .volume-control .row img {
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+      }
+
+        .volume-control .row .diode-green img {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+        }
+
+        .volume-control .row .diode-red img {
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+        }
+
+        .volume-control .row .diode-yellow img {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+        }
+
+        .volume-control .row .diode-blue img {
+          position: absolute;
+          top: 5px;
+          left: 5px;
+        }
+}
+
+/* small desktop */
+@media only screen and (min-width: 1000px) {
+
+p.logo {
+  font-size: 60px;
+  height: 175px;
+}
+
+.main {
+  height: 620px;
+  width: 620px;
+}
+
+  .main .big {
+    height: 600px;
+    width: 600px;
+  }
+
+    .main .big [class*="diode-"] {
+      height: 300px;
+      width: 300px;
+    }
+
+.sub-panel {
+  border: 5px solid #95989a;
+  border-radius: 100%;
+  height: 300px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 300px;
+}
+
+  .sub-panel .row {
+    margin-top: 150px;
+  }
+
+}
+
+/* large desktop */
+@media only screen and (min-width: 1500px) {
+
+  p.logo {
+    font-size: 80px;
+    height: 275px;
+  }
+
+  .main {
+    height: 820px;
+    width: 820px;
+  }
+
+    .main .big {
+      height: 800px;
+      width: 800px;
+    }
+
+      .main .big [class*="diode-"] {
+        height: 400px;
+        width: 400px;
+      }
+
+  .sub-panel {
+    border: 5px solid #95989a;
+    border-radius: 100%;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 400px;
+  }
+
+    .sub-panel .row {
+      margin-top: 200px;
+    }
+
+/* Sounds Controls */
+.volume-control {
+  height: 208px;
+  right: 20px;
+  width: 208px;
+}
+
+  .volume-control .small {
+    height: 200px;
+    width: 200px;
+  }
+
+    .volume-control .small [class*="diode-"] {
+      height: 100px;
+      width: 100px;
+    }
+
+    .volume-control .row img {
+      height: 45px;
+      width: 45px;
+    }
+
+    .volume-control .row .diode-green img {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+    }
+
+    .volume-control .row .diode-red img {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+
+    .volume-control .row .diode-yellow img {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .volume-control .row .diode-blue img {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+}

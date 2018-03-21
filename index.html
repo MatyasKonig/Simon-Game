@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <p class="logo">CHLOE</p>
+  <div class="sub-panel">
+    <div class="row">
+      <div class="inline">
+        <button class="startButton" id="startButton"></button>
+        <p>START</p>
+      </div>
+      <div class="inline">
+        <p class="lvlBox" id="currentLevel"></p>
+        <p>LEVEL</p>
+      </div>
+      <div class="inline">
+        <p class="lvlBox" id="maxLvl"></p>
+        <p>LONGEST</p>
+      </div>
+    </div>
+    <div class="powerButton" id="powerButton">
+      <p class="powerText noselect" id="powerText">OFF</p>
+      <button class="powerSwitch"></button>
+    </div>
+  </div>
+  <div class="panel main">
+    <div class="buttons big">
+      <div class="row">
+        <button class="diode-green" id="1"></button>
+        <button class="diode-red" id="2"></button>
+      </div>
+      <div class="row">
+        <button class="diode-yellow" id="4"></button>
+        <button class="diode-blue" id="3"></button>
+      </div>
+    </div>
+  </div>
+  <div class="panel volume-control">
+    <div class="buttons small">
+      <div class="row">
+        <div class="diode-green" id="noVolume">
+          <img src="assets/img/volume-x.svg" alt="Sounds Off Button">
+        </div>
+        <div class="diode-red" id="lowVolume">
+          <img src="assets/img/volume.svg" alt="Sounds Low Button">
+        </div>
+      </div>
+      <div class="row">
+        <div class="diode-yellow" id="mediumVolume">
+          <img src="assets/img/volume-1.svg" alt="Sounds High Button">
+        </div>
+        <div class="diode-blue" id="highVolume">
+          <img src="assets/img/volume-2.svg" alt="Sounds High Button">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript -->
+  <script src="simon.js"></script>
+</body>
+</html>
