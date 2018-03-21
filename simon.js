@@ -244,7 +244,7 @@ function colorChange(elementID, newClass) {
       }
     }
 
-    /* Not an optimal way to iterate through colorPattern array...but I give up on trying to find the best solution. If you are looking at this and know how to do it, contact me at mchlebovsky@icloud.com. I will be super grateful. Actually found a temporary solution that is being tested. If you see a problem with the current solution (located above, contact me) */
+    /* Not an optimal way to iterate through colorPattern array...but I gave up on trying to find the best solution. If you are looking at this and know how to do it, contact me at mchlebovsky@icloud.com. I will be super grateful. Actually found a temporary solution that is being tested. If you see a problem with the current solution (located above) contact me */
 
     // function simonButtonLog1() {
     //   if (power) {
