@@ -2,7 +2,7 @@
 A JavaScript program that simulates the popular children game 'Simon'.
 
 ## Try this game!
-Visit chloedinh.com/simon
+Visit matyaskonig.github.io/SimonGame/
 
 ## Important
 The program needs to be run on a server, otherwise it will not function properly.
